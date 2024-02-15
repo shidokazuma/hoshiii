@@ -1,0 +1,65 @@
+document.getElementById("backButton").addEventListener("click", function() {
+  document.getElementById("result").style.display = "none";
+});
+
+document.getElementById("fineButton").addEventListener("click", function() {
+  var name = document.getElementById("nameSpan").textContent;
+  document.getElementById("funQuestion").textContent = "You're having a fine day, " + name + ". Is it okay to ask you a question?";
+  document.getElementById("thirdPage").style.display = "block";
+  document.getElementById("secondPage").style.display = "none";
+});
+
+document.getElementById("notFineButton").addEventListener("click", function() {
+  var name = document.getElementById("nameSpan").textContent;
+  document.getElementById("funQuestion").textContent = "Sorry to hear you're not having a good day, " + name + ". Is it okay to ask you a question to cheer you up?";
+  document.getElementById("thirdPage").style.display = "block";
+  document.getElementById("secondPage").style.display = "none";
+
+});
+
+document.getElementById("yesButton").addEventListener("click", function() {
+  var allYesButtons = document.querySelectorAll(".funButton");
+      allYesButtons.forEach(function(button) {
+        if (button.textContent === "Yep") {
+          button.style.display = "none";
+        }
+      });
+      
+  document.getElementById("thirdPage").style.display = "none";
+  document.getElementById("fourthPage").style.display = "block";
+    
+  
+  
+});
+
+document.getElementById("noButton").addEventListener("click", function() {
+  var xPosition = Math.random() * 300;
+  var yPosition = Math.random() * 800;
+  document.getElementById("noButton").style.position = "absolute";
+  document.getElementById("noButton").style.left = xPosition + "px";
+  document.getElementById("noButton").style.top = yPosition + "px";
+  
+});
+
+document.getElementById("yesValentineButton").addEventListener("click", function() {
+  alert("You're my valentine! Happy Valentine's Day!");
+});
+
+
+var valentineButtonSize = 0
+var valentineTextSize = 16
+
+document.getElementById("noValentineButton").addEventListener("click", function() {
+ // Increase size of the Yes Valentine button
+valentineButtonSize += 10;
+valentineTextSize += 1;
+document.getElementById("yesValentineButton").style.width = valentineButtonSize + 100 + "px";
+document.getElementById("yesValentineButton").style.height = valentineButtonSize + 40 + "px";
+document.getElementById("yesValentineButton").style.fontSize = valentineTextSize  + "px";
+});
+
+
+document.getElementById("yesValentineButton").addEventListener("click", function(){
+    // Change the URL to the desired link
+    window.location.href = "flower.html";
+});
